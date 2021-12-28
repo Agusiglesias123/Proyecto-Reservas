@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Gestion</title>
+    </head>
+    <body>
+        <div>
+            <h1>Reservas</h1>
+            <div>
+                <p>cantidad de reservas</p>
+                <p id="pantalla">0</p>
+            </div> 
+            {% for reserva in reserva %}
+
+                <div>
+                    <h3>{{reserva.nombre}}</h3>
+                    <h3>{{reserva.apellido}}</h3>
+                    <p id="numero">{{reserva.telefono}}</p>
+                    <p>{{reserva.sector}}</p>
+                    <p>{{reserva.comensales}}</p>
+                    <p>{{reserva.fecha}}</p>
+                    <p>{{reserva.hora}}</p>
+                    <button type="submit" id="aceptar" class="btn btn-primary">Confirmar</button>
+                    <button type="submit" class="btn btn-primary">Rechazar</button>
+                </div>
+            
+            {% endfor %}
+        </div>
+        <script>
+            //esto deberia ir en un archivo aparte
+            const confirmar = document.getElementById('aceptar');
+            let numero = document.getElementById('numero');
+
+            confirmar.addEventListener('click',()=>{
+                console.log(numero.textContent);
+                let url = "https://api.whatsapp.com/send?phone=54"+numero.textContent+" holis";
+                window.open(url); 
+            });
+        </script>
+    </body>
+</html>

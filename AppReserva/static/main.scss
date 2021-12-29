@@ -1,0 +1,31 @@
+@import "./parciales/vars";
+@import "./parciales/layout";
+@import "./parciales/form";
+@import "./parciales/button";
+
+ 
+
+@media screen and (max-width: 768px){
+    .btn-Logo{
+        font-size: 1.5rem;
+    }
+    .cont{
+        margin: 0px!important;
+    }
+}
+@media screen and (max-width: 1160px){
+
+    .foot{
+        color: white;
+    }
+}
+
+.img{
+    width: 100px;
+}
+@media screen and (min-width: 1160px){
+    .foot{
+        color: rgb(0, 0, 0);
+    }
+
+}

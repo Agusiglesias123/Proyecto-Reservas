@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Gestion</title>
+    </head>
+    <body>
+        <div>
+            <h1>Reservas</h1>
+            <div>
+                <p>cantidad de reservas</p>
+                <p id="pantalla">0</p>
+            </div> 
+            {% for reserva in reserva %}
+
+                <div class="reserva">
+                    <h3>{{reserva.nombre}}</h3>
+                    <h3>{{reserva.apellido}}</h3>
+                    <p class="num">{{reserva.telefono}}</p>
+                    <p>{{reserva.sector}}</p>
+                    <p>{{reserva.comensales}}</p>
+                    <p>{{reserva.fecha}}</p>
+                    <p>{{reserva.hora}}</p>
+                    <button type="submit" class="aceptar">Confirmar</button>
+                    <button type="submit" class="btn btn-primary">Rechazar</button>
+                </div>
+            {% endfor %}
+
+            <script>
+                //esto deberia ir en un archivo aparte
+                const reserva = document.querySelectorAll('.reserva');
+                const confirmar = document.querySelectorAll('.aceptar');
+                const numero = document.querySelectorAll('.num');
+
+
+                const lista_reservas = [];
+                const lista_numeros = [];
+                const lista_aceptar = [];
+
+                numero.forEach(e =>{
+                    lista_numeros.push(e);
+                });
+
+                reserva.forEach(e =>{
+                    lista_reservas.push(e);
+                });
+
+                confirmar.forEach(e =>{
+                    lista_aceptar.push(e);
+                });
+
+                lista_aceptar.forEach(conf =>{
+                    conf.addEventListener('click',()=>{
+                        console.log(lista_numeros[lista_aceptar.indexOf(conf)].textContent);
+                        let number = lista_numeros[lista_aceptar.indexOf(conf)].textContent;
+                        let url = "https://api.whatsapp.com/send?phone=549"+ number +"&text=*_Hola, confirmamos tu reserva! te esperamos! Fisher ;)_*";
+                        window.open(url);
+                        //aca deberia de ir la funcion de borrado de la solicitud osea que desaparezca
+                    });
+                });
+
+                //y por aca la de rechazar y ademas borrarla 
+            </script>
+
+        
+
+        </div>
+    </body>
+</html>

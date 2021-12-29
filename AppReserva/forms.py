@@ -15,7 +15,6 @@ class Solicitud(forms.ModelForm):
             'comensales',
             'fecha',
             'hora',
-
         ]
 
         labels= {
@@ -26,14 +25,13 @@ class Solicitud(forms.ModelForm):
             'comensales' : 'Comensales',
             'fecha' : 'Fecha',
             'hora' : 'Hora',
-
-        }
+            }
         widgets= {
             'nombre' : forms.TextInput(attrs={'class': 'form-control'}),
             'apellido' : forms.TextInput(attrs={'class': 'form-control'}),
             'telefono' : forms.TextInput(attrs={'class': 'form-control'}),
-            'sector' : forms.TextInput(attrs={'class': 'form-control'}),
+            'sector' : forms.Select(attrs={'class': 'form-control'}),
             'comensales' : forms.TextInput(attrs={'class': 'form-control'}),
-            'fecha' : forms.DateInput(attrs={'type':'date'}),
+            'fecha' : forms.DateInput(attrs={'type':'date', 'class': 'form-control'}),
             'hora' : forms.Select(attrs={'class': 'form-control'}),
             } 

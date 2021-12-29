@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/static/main.css">
 </head>
 <body class="d-flex flex-direction flex-column flex-md-row">
+
 <div class="container-fluid w-100">
     <div class="container-fluid  w-100">
         <div class="img__cont-logo d-flex justify-content-center">
@@ -80,7 +81,7 @@
                         {% load static %}
                         <img class="foto" src={%static  '/img/IMG-20211220-WA0056.jpg'%} alt="">
                         <div class="card-body">
-                            <h3 class="text-center">PATIO</h3>
+                            <h3 class="text-center">Patio</h3>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                         <button type="input" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -128,6 +129,7 @@
       </div>
       <div class="modal-body">
         <form class="row g-3 needs-validation" method="POST">
+          <button id="prueba">prueba</button>
           {% csrf_token %}
             <div class="col-md-4">
               <label for="validationCustom01" class="form-label">Nombre</label>
@@ -138,8 +140,9 @@
               {{form.apellido}}
             </div>
             <div class="col-md-4">
-                <label for="validationCustom04" class="form-label">Sector</label>
-                {{form.sector}}
+              <label for="validationCustom04" class="form-label">Sector</label>
+              <div id="sec">{{form.sector}}</div>
+
                 <!--<select class="form-select" id="validationCustom04" required>
                   <option selected disabled value="">Elige..</option>
                   <option>Vereda</option>
@@ -198,7 +201,7 @@
             <div class="col-md-7">
               <label for="validationCustom05" class="form-label">Fecha</label>
               {{form.fecha}}
-              
+
               {{form.hora}}
               <!-- <input type="datetime-local" class="form-control" placeholder="select datetime"> -->
             </div>
@@ -227,7 +230,16 @@
               <button type="submit" class="btn btn-danger">Enviar Reserva</button>
             </a>
             </div>
-          </form>      
+          </form>    
+          <script>
+            //const prueba = document.getElementById('prueba');
+            //let sector = document.getElementById('sec');
+
+            //prueba.addEventListener('click',()=>{
+            //  console.log(sector);
+            //  document.getElementById('sec').textContent = "Patio";
+            //});
+          </script>  
     </div>
   </div>
 </div>

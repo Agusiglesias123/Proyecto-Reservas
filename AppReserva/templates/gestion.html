@@ -48,12 +48,12 @@
           </div>
         </div>
       </nav>
-    <div class="Maincontainer">
-        <div class="container">
+    <div class="Maincontainer" >
+        <div class="container" >
             <div class="container-fluid">
                 {% for reserva in reserva %}
-                <div class="reserva">
-                    <h3>{{reserva.nombre}}</h3>
+                <div class="reserva" id="caja">
+                    <h3 class="nombre">{{reserva.nombre}}</h3>
                     <h3>{{reserva.apellido}}</h3>
                     <p class="num">{{reserva.telefono}}</p>
                     <p>{{reserva.sector}}</p>
@@ -61,7 +61,7 @@
                     <p>{{reserva.fecha}}</p>
                     <p>{{reserva.hora}}</p>
                     <button type="submit" class="btn btn-success aceptar">Confirmar</button>
-                    <button type="submit" class="btn btn-danger">Rechazar</button>
+                    <button type="submit" class="btn btn-danger rechazar">Rechazar</button>
                 </div>
                 {% endfor %}
             </div>
@@ -92,12 +92,21 @@
                 //esto deberia ir en un archivo aparte
                 const reserva = document.querySelectorAll('.reserva');
                 const confirmar = document.querySelectorAll('.aceptar');
+                const rechazar = document.querySelectorAll('.rechazar');
                 const numero = document.querySelectorAll('.num');
+                const nombre = document.querySelectorAll('.nombre');
+                let caja = document.querySelectorAll('.caja');
 
 
                 const lista_reservas = [];
                 const lista_numeros = [];
                 const lista_aceptar = [];
+                const lista_rechazar = [];
+                const lista_nombre = [];
+
+                nombre.forEach(e =>{
+                  lista_nombre.push(e);
+                });
 
                 numero.forEach(e =>{
                     lista_numeros.push(e);
@@ -111,6 +120,10 @@
                     lista_aceptar.push(e);
                 });
 
+                rechazar.forEach(e =>{
+                  lista_rechazar.push(e);
+                });
+                // botones de aceptar
                 lista_aceptar.forEach(conf =>{
                     conf.addEventListener('click',()=>{
                         console.log(lista_numeros[lista_aceptar.indexOf(conf)].textContent);
@@ -120,8 +133,16 @@
                         //aca deberia de ir la funcion de borrado de la solicitud osea que desaparezca
                     });
                 });
-
-                //y por aca la de rechazar y ademas borrarla 
+                //botones de rechazo
+                lista_rechazar.forEach(conf =>{
+                    conf.addEventListener('click',()=>{
+                        console.log(lista_numeros[lista_rechazar.indexOf(conf)].textContent);
+                        let number = lista_numeros[lista_rechazar.indexOf(conf)].textContent;
+                        let url = "https://api.whatsapp.com/send?phone=549"+ number +"&text=*_Hola, Lamentablemente no pudimos tomar tu reserva! Fisher :(_*";
+                        window.open(url);
+                        //aca deberia de ir la funcion de borrado de la solicitud osea que desaparezca
+                    });
+                });
             </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/3fc0e34d50.js" crossorigin="anonymous"></script>

@@ -18,3 +18,19 @@
       @content;
     }
   }
+  @mixin movil{
+    @media screen and (max-width: 425px){
+      @content;
+    }
+  }
+  @mixin tablet1{
+    @media screen and (min-width: 426px){
+      @content;
+    }
+  }
+  @mixin laptop2{
+    @media screen and (min-width: 1024px){
+      @content;
+    }
+  }
+  

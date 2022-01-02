@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FISHER | INICIO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <script src="js/bootstrap-datetimepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./static/main.css">
+</head>
+<body class="layout maincont">
+<div class="container contPrin w-100 d-flex ">
+  <div class="img__cont-logo d-flex justify-content-center">
+    <a href="#">
+      {% load static %}
+      <img class="foto" src={%static  '/img/icono.png'%} alt="">
+    </a>
+  </div>
+  <div class="d-flex cont d-flex flex-column flex-md-row w-100">
+    <div class="container contPrin cont-btn">
+      <div class="row">
+        <div class="col">
+          <a href="galeria" class="text-decoration-none">
+            <button type="button" class="btn-Logo d-flex justify-content-center w-100 ">Reservas</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container contPrin cont-btn">
+      <div class="row">
+        <div class="col ">
+            <button type="button" class="btn-Logo d-flex justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Menu
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<b>
+  <p class="mt-4 mb-3 text-center foot pt-4"> Proyecto-Reservas. &copy; 2021</p> 
+</b>
+<div class="d-flex flex-row justify-content-center ">
+  <a href="https://api.whatsapp.com/send?phone=22126793983&text=Hola!%20me%20comunico%20para%20consultarte%20por%20las%20promociones">
+    <i class=" icon bi bi-whatsapp font foot"></i>
+  </a>
+  <a href="https://www.instagram.com/fisher.laplata/?hl=es">
+    <i class=" icon bi bi-instagram font foot"></i>
+  </a>
+</div>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
+    <div class="modal-content bg_modal">
+      <div class="modal-header">
+        <h5 class="modal-title text-white" id="staticBackdropLabel">MENU</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center w-auto">
+              {% load static %}
+      <img class="img-fluid" src="{%static  '/img/Captura de Pantalla 2021-12-03 a la(s) 07.38.10.png'%}" alt="">
+      <img class="img-fluid" src="{%static  '/img/Captura de Pantalla 2021-12-03 a la(s) 07.38.14.png'%}" alt="">
+      <img class="img-fluid" src="{%static  '/img/1.jpg'%}" alt="">
+      <img class="img-fluid" src="{%static  '/img/2.jpg'%}" alt="">
+        <img class="img-fluid" src="{%static  '/img/Captura de Pantalla 2021-12-03 a la(s) 07.38.06.png'%}" alt="">
+      </div>
+      <div class="modal-footer justify-content-between">
+        <div class="">
+          <a href="https://api.whatsapp.com/send?phone=22126699667&text=Hola!%20me%20comunico%20para%20consultarte%20por%20las%20promociones">
+            <i class=" text-white icon bi bi-whatsapp font foot"></i>
+          </a>
+          <a href="https://www.instagram.com/fisher.laplata/?hl=es">
+            <i class=" text-white icon bi bi-instagram font foot"></i>
+          </a>
+        </div>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

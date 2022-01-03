@@ -61,7 +61,9 @@
                     <p>{{reserva.fecha}}</p>
                     <p>{{reserva.hora}}</p>
                     <button type="submit" class="btn btn-success aceptar">Confirmar</button>
-                    <button type="submit" class="btn btn-danger rechazar">Rechazar</button>
+                    <a href="{% url 'eliminar' reserva.id %}">
+                      <button type="submit" class="btn btn-danger rechazar">Rechazar</button>
+                    </a>
                 </div>
                 {% endfor %}
             </div>
